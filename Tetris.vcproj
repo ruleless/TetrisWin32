@@ -47,13 +47,12 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="../"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile=".\Debug/Block.pch"
+				UsePrecompiledHeader="0"
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
@@ -210,80 +209,9 @@
 	</References>
 	<Files>
 		<Filter
-			Name="Source Files"
-			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
-			>
-			<File
-				RelativePath="Block.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="Block.rc"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="StdAfx.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						PreprocessorDefinitions=""
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						PreprocessorDefinitions=""
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-			</File>
-		</Filter>
-		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl"
 			>
-			<File
-				RelativePath="Block.h"
-				>
-			</File>
 			<File
 				RelativePath="Fuc.h"
 				>
@@ -315,8 +243,80 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Tetris"
+			Name="src"
 			>
+			<File
+				RelativePath="Block.rc"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCResourceCompilerTool"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCResourceCompilerTool"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\src\common.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Entity.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Entity.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\IteratorWrapper.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Matrix4.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Matrix4.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\ObjectPool.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\platform.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Renderable.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Renderable.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\RenderSystem.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\RenderSystem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\strutil.h"
+				>
+			</File>
 			<File
 				RelativePath=".\src\Tetris.cpp"
 				>
@@ -325,6 +325,42 @@
 				RelativePath=".\src\Tetris.h"
 				>
 			</File>
+			<File
+				RelativePath=".\src\TetrisDef.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\ThreadMutex.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Vector2.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Vector2x2.h"
+				>
+			</File>
+			<Filter
+				Name="win32"
+				>
+				<File
+					RelativePath=".\src\GdiRenderSystem.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\src\GdiRenderSystem.h"
+					>
+				</File>
+				<File
+					RelativePath=".\src\Main.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\src\Main.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 	</Files>
 	<Globals>
