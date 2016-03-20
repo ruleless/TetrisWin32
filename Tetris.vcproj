@@ -73,6 +73,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="winmm.lib"
 				OutputFile=".\Debug/Block.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -212,33 +213,17 @@
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl"
 			>
-			<File
-				RelativePath="Fuc.h"
-				>
-			</File>
-			<File
-				RelativePath="resource.h"
-				>
-			</File>
-			<File
-				RelativePath="StdAfx.h"
-				>
-			</File>
-			<File
-				RelativePath="Valuable.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
 			<File
-				RelativePath="Block.ico"
+				RelativePath=".\res\Block.rc"
 				>
 			</File>
 			<File
-				RelativePath="small.ico"
+				RelativePath=".\res\resource.h"
 				>
 			</File>
 		</Filter>
@@ -246,24 +231,12 @@
 			Name="src"
 			>
 			<File
-				RelativePath="Block.rc"
+				RelativePath=".\src\Colour.cpp"
 				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\src\Colour.h"
+				>
 			</File>
 			<File
 				RelativePath=".\src\common.h"
@@ -287,6 +260,14 @@
 			</File>
 			<File
 				RelativePath=".\src\Matrix4.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Node.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Node.h"
 				>
 			</File>
 			<File
@@ -354,10 +335,6 @@
 				</File>
 				<File
 					RelativePath=".\src\Main.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\src\Main.h"
 					>
 				</File>
 			</Filter>

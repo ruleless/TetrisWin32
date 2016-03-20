@@ -3,57 +3,79 @@
 
 #include "RenderSystem.h"
 #include "Vector2x2.h"
+#include "Colour.h"
 
-class RenderableTetris : public Renderable
+namespace tetris
 {
-public:
-	RenderableTetris() : mShape()
+	class RenderableTetris : public Renderable
 	{
-	}
+	public:
+		RenderableTetris() : mShape()
+		{
+		}
 
-	virtual ~RenderableTetris() {}
+		virtual ~RenderableTetris() {}
 
-	virtual void* getRenderData() const
+		virtual void* getRenderData() const
+		{
+			return (void *)&mShape;
+		}
+
+		virtual SRgb getRGB() const
+		{
+			return mColor;
+		}
+
+		void setShape(const Vector2 &v1, const Vector2 &v2)
+		{
+			mShape.v1 = v1;
+			mShape.v2 = v2;
+		}
+
+		void setShape(const Vector2x2 &s)
+		{
+			mShape = s;
+		}
+
+
+		void setRGB(const SRgb &c)
+		{
+			mColor = c;
+		}
+	protected:
+		Vector2x2 mShape;
+		SRgb mColor;
+	};
+
+	class RenderableLine : public RenderableTetris
 	{
-		return (void *)&mShape;
-	}
+	public:
+		static ObjectPool<RenderableLine>& ObjPool();
+		static void destroyObjPool();
 
-	void setShape(const Vector2 &v1, const Vector2 &v2)
+		virtual void onReclaimObject() {}
+		virtual void release();
+
+		virtual ERenderType getRenderType() const
+		{
+			return RenderType_Line;
+		}
+	};
+
+	class RenderableRect : public RenderableTetris
 	{
-		mShape.v1 = v1;
-		mShape.v2 = v2;
-	}
-protected:
-	Vector2x2 mShape;
-};
+	public:
+		static ObjectPool<RenderableRect>& ObjPool();
+		static void destroyObjPool();
 
-class RederableLine : public RenderableTetris
-{
-public:
-	static ObjectPool<RederableLine>& ObjPool();
-	static void destroyObjPool();
+		virtual void onReclaimObject() {}
+		virtual void release();
 
-	virtual void onReclaimObject() {}
-
-	virtual ERenderType getRenderType() const
-	{
-		return RenderType_Line;
-	}
-};
-
-class RederableRect : public RenderableTetris
-{
-public:
-	static ObjectPool<RederableRect>& ObjPool();
-	static void destroyObjPool();
-
-	virtual void onReclaimObject() {}
-	virtual void release();
-
-	virtual ERenderType getRenderType() const
-	{
-		return RenderType_Rect;
-	}
-};
+		virtual ERenderType getRenderType() const
+		{
+			return RenderType_Rect;
+		}
+	};
+}
 
 #endif // __RENDERABLE_H__
